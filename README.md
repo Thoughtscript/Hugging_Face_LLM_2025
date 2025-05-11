@@ -19,6 +19,7 @@ docker compose up
 1. This is a simple example (**NOT** Production-worthy) and basic safeguards (like input field validation, param sanitization, and the like) are mostly omitted here.
     * There's not a tremendous one can do within the context of *this* simple demo to break things/be malicious.
     * But the design pattern *should* be avoided in Production *as is* (without the addition of typical Production security mechanisms)!
+1. The build can take upwards of `30 minutes` due to large (`many GB`) LLM Models.
 
 ## Notes
 
