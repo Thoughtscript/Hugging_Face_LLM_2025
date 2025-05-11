@@ -1,0 +1,10 @@
+# hf
+diffusers
+huggingface_hub[cli]
+transformers
+
+# Required deps
+protobuf 
+accelerate
+torch
+transformers[sentencepiece] # Required for slow tokenizer transform - sentiencepiece was removed from transformers

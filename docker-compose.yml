@@ -1,0 +1,5 @@
+services:
+  py:
+    build:
+      context: ./py
+      dockerfile: dockerfile
