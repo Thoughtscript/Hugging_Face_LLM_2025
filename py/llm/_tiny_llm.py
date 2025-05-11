@@ -1,6 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import argparse
- from urllib.parse import unquote
+from urllib.parse import unquote
 
 # https://huggingface.co/arnir0/Tiny-LLM
 if __name__ == '__main__':
@@ -44,7 +44,6 @@ if __name__ == '__main__':
                 result.append(sp_arr[x])
 
             return result
-
 
         parser = argparse.ArgumentParser()
         parser.add_argument('--prompt')  

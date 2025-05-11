@@ -67,20 +67,32 @@
     ********************************************************************************
     -->
     <script>
-        window.onload = function () {
-            const I = document.getElementById("exampleTextInput")
-            const S = document.getElementById("submit")
-            const O = document.getElementById("output")
+      window.onload = function () {
+        const I = document.getElementById("exampleTextInput")
+        const S = document.getElementById("submit")
+        const O = document.getElementById("output")
             
-            S.addEventListener('click', e => {
-              fetch(`http://localhost:8000/api/llm?prompt=${encodeURIComponent(I.value)}`)
-                .then(success => success.json())
-                .then(result => {
-                  const T = document.createElement("p")
-                  T.textContent = JSON.stringify(result)
-                  O.appendChild(T)
-                })
+        S.addEventListener('click', e => {
+          document.getElementById("output").innerHTML = ""
+          const H3 = document.createElement("h3")
+          H3.textContent = "Generated Text"
+          document.getElementById("output").appendChild(H3)
+
+          fetch(`http://localhost:8000/api/llm?prompt=${encodeURIComponent(I.value)}`)
+            .then(success => success.json())
+            .then(result => {         
+              const rs_arr = result.split("\n")
+
+              for (let i = 0; i < rs_arr.length; i++) {
+                if ([1,2,3].includes(i)) continue
+                
+                const T = document.createElement("p")
+                T.className="result"
+                T.textContent = rs_arr[i]
+                O.appendChild(T)
+              }
             })
-        }
+        })
+      }
     </script>
 </html>
