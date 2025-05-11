@@ -3,3 +3,5 @@ services:
     build:
       context: ./py
       dockerfile: dockerfile
+    ports:
+      - '8000:8000'

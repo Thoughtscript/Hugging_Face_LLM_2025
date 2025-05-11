@@ -8,3 +8,7 @@ protobuf
 accelerate
 torch
 transformers[sentencepiece] # Required for slow tokenizer transform - sentiencepiece was removed from transformers
+
+# fastapi
+fastapi
+uvicorn[standard]

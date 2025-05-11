@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+    ********************************************************************************
+    *                                   COMPATIBILITY                              *
+    ********************************************************************************
+    -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    ********************************************************************************
+    *                                   DESCRIPTION                                *
+    ********************************************************************************
+    -->
+    <title>Tiny LLM</title>
+    <meta name="description" content="">
+    <!--
+    ********************************************************************************
+    *                                   FAVICON                                    *
+    ********************************************************************************
+    -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--
+    ********************************************************************************
+    *                                   STYLING                            *
+    ********************************************************************************
+    -->
+    <link rel="stylesheet" href="styles.css" >
+
+  </head>
+  <body>
+    <nav>
+      <h1>Tiny LLM</h1>
+    </nav>
+
+    <main>
+        <div id="wrapper">
+          <input id="exampleTextInput" type="text" placeholder="placeholder_text" />
+          
+          <div id="submit">Submit</div>
+          
+          <div id="output">
+            <h3>Generated Text</h3>
+          </div>
+        </div>
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+            <a href="https://github.com/Thoughtscript/Hugging_Face_LLM_2025">GitHub</a>
+        </li>
+        <li>
+            <a href="https://huggingface.co/arnir0/Tiny-LLM">Tiny LLM</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+
+   <!--
+    ********************************************************************************
+    *                                   SCRIPTS                                    *
+    ********************************************************************************
+    -->
+    <script>
+        window.onload = function () {
+            const I = document.getElementById("exampleTextInput")
+            const S = document.getElementById("submit")
+            const O = document.getElementById("output")
+            
+            S.addEventListener('click', e => {
+              fetch(`http://localhost:8000/api/llm?prompt=${encodeURIComponent(I.value)}`)
+                .then(success => success.json())
+                .then(result => {
+                  const T = document.createElement("p")
+                  T.textContent = JSON.stringify(result)
+                  O.appendChild(T)
+                })
+            })
+        }
+    </script>
+</html>
