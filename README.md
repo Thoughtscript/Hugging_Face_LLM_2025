@@ -20,6 +20,10 @@ docker compose up
     * There's not a tremendous one can do within the context of *this* simple demo to break things/be malicious.
     * But the design pattern *should* be avoided in Production *as is* (without the addition of typical Production security mechanisms)!
 
+## Notes
+
+1. Hugging Face will download and cache `models--arnir0--Tiny-LLM` into `root/.cache/huggingface/hub`.
+
 ## Resources and Links
 
 1. https://huggingface.co/arnir0/Tiny-LLM
