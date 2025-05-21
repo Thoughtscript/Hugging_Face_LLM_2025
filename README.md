@@ -28,6 +28,7 @@ docker compose up
    * The following commands will launch of Dockerized LLM Model ([somewhat similar](https://hub.docker.com/r/ai/deepseek-r1-distill-llama) to this one):
      * `docker model pull ai/deepseek-r1-distill-llama`
      * `docker model run ai/deepseek-r1-distill-llama`
+     * **Docker Model Runner** supports Hugging Face Models.
 
 ## Resources and Links
 
