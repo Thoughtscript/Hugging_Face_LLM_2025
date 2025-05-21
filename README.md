@@ -24,6 +24,10 @@ docker compose up
 ## Notes
 
 1. Hugging Face will download and cache `models--arnir0--Tiny-LLM` into `root/.cache/huggingface/hub`.
+2. Also, **Docker Desktop 4.40** now supports [Docker Model Runner](https://www.docker.com/blog/introducing-docker-model-runner/).
+   * The following commands will launch of Dockerized LLM Model ([somewhat similar](https://hub.docker.com/r/ai/deepseek-r1-distill-llama) to this one):
+     * `docker model pull ai/deepseek-r1-distill-llama`
+     * `docker model run ai/deepseek-r1-distill-llama`
 
 ## Resources and Links
 
